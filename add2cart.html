@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="CodeHim">
+    <title>Cart Items</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel='stylesheet' href='https://cdn.jsdelivr.net/foundation/5.0.2/css/foundation.css'>
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="css/style.css">
+	<!-- Demo CSS (No need to include it into your project) -->
+	<link rel="stylesheet" href="add2cart.css">
+  
+  </head>
+  <body>
+
+    <div class="medium-4  columns">
+        <div class="cart">
+            <h1>Cart items</h1>
+            <div class="row">
+                <div class="medium-6 columns">
+                    <button class="tiny secondary" id="clear">Clear the cart</button>
+                </div>
+                <div class="medium-6 columns">
+                    <button class="tiny secondary">Checkout</button>
+                </div>
+            </div>
+            <div id="cartItems">Loading cart...</div>
+            Total price: <strong id="totalPrice">0 ALL</strong>
+        </div>
+      
+    </div>
+    <div class="medium-8 columns">
+        <h1>Your products</h1>
+        <div class="products">
+            <div class="product medium-4 columns" data-name="Banana" data-price="180" data-id="0">
+                <img src="https://p44pa.github.io/News/product-1.png" width="400px" height="400px" alt="Banana" />
+                <h3>Banana</h3>
+                <input type="text" class="count" value="1" />
+                <button class="tiny">Add to cart</button>
+            </div>
+            <div class="product medium-4 columns" data-name="Tomato" data-price="120" data-id="1">
+                <img src="https://p44pa.github.io/News/product-2.png" width="400px" height="400px" alt="Tomato" />
+                <h3>Tomato</h3>
+                <input type="text" class="count" value="1" />
+                <button class="tiny">Add to cart</button>
+            </div>
+            <div class="product medium-4 columns" data-name="Orange" data-price="90" data-id="2">
+                <img src="https://5.imimg.com/data5/VN/YP/MY-33296037/orange-600x600-500x500.jpg" width="400px" height="400px"  alt="Orange" />
+                <h3>Orange</h3>
+                <input type="text" class="count" value="1" />
+                <button class="tiny">Add to cart</button>
+            </div>
+            <div class="product medium-4 columns" data-name="Plums" data-price="350" data-id="3">
+                <img src="https://p44pa.github.io/News/product-5.png" width="400px" height="400px" alt="Plums" />
+                <h3>Plums</h3>
+                <input type="text" class="count" value="1"  />
+                <button class="tiny">Add to cart</button>
+            </div>
+            <div class="product medium-4 columns" data-name="Apple" data-price="120" data-id="4">
+                <img src="https://static.libertyprim.com/files/familles/pomme-large.jpg?1569271834" width="400px" height="400px" alt="Apple" />
+                <h3>Apple</h3>
+                <input type="text" class="count" value="1" />
+                <button class="tiny">Add to cart</button>
+            </div>
+            <div class="product medium-4 columns" data-name="Carrot" data-price="110" data-id="5">
+                <img src="https://p44pa.github.io/News/product-9.png" width="400px" height="400px"  alt="Carrot" />
+                <h3>Carrot</h3>
+                <input type="text" class="count" value="1" />
+                <button class="tiny">Add to cart</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/template" id="cartT">
+  <% _.each(items, function (item) { %> <div class = "panel"> <h3> <%= item.name %> </h3>  <span class="label">
+<%= item.count %> kg<% if(item.count > 1)
+{%>s
+<%}%> for <%= item.total %> ALL</span > </div>
+<% }); %>
+</script>
+
+
+      
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js'></script>
+<script  src="add2cart.js"></script>
+      
+  </body>
+</html>
